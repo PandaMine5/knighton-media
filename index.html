@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Knighton Media</title>
+    <meta name="description" content="Watch all 50+ Nexo Knights episodes in English, Ukrainian, German, Romanian at Knighton Media!">
+ 
+    <meta property="og:title" content="Knighton Media - Nexo Knights for Free">
+    <meta property="og:type" content="website">  
+    <meta property="og:image" content="bg.avif">
+
+    <link rel="icon" type="image/png" href="assets/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="Knighton Media">
+    <link rel="canonical" href="https://pandamine5.github.io/knighton-media">
+
+    <link rel="prefetch" href="episode.html">
+    <link rel="preload" href="js/episodeBuilder.js" as="script">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none" aria-hidden="true">
+        <symbol id="icon-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 3h6v6" />
+            <path d="M10 14 21 3" />
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+        </symbol>
+        <symbol id="icon-discord" viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z">
+            </path>
+        </symbol>
+        <symbol id="icon-github" viewBox="0 0 98 96" fill="currentColor">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" />
+        </symbol>
+        <symbol id="icon-curseforge" viewBox="0 0 24 24" fill="currentColor" stroke-width="1">
+            <path
+                d="M18.326 9.2145S23.2261 8.4418 24 6.1882h-7.5066V4.4H0l2.0318 2.3576V9.173s5.1267 -0.2665 7.1098 1.2372c2.7146 2.516 -3.053 5.917 -3.053 5.917L5.0995 19.6c1.5465 -1.4726 4.494 -3.3775 9.8983 -3.2857 -2.0565 0.65 -4.1245 1.6651 -5.7344 3.2857h10.9248l-1.0288 -3.2726s-7.918 -4.6688 -0.8336 -7.1127z">
+            </path>
+        </symbol>
+        <symbol id="icon-patreon" width="90%" height="90%" viewBox="0 0 1080 1080" fill="currentColor">
+            <path
+                d="M1033.05,324.45c-0.19-137.9-107.59-250.92-233.6-291.7c-156.48-50.64-362.86-43.3-512.28,27.2 C106.07,145.41,49.18,332.61,47.06,519.31c-1.74,153.5,13.58,557.79,241.62,560.67c169.44,2.15,194.67-216.18,273.07-321.33 c55.78-74.81,127.6-95.94,216.01-117.82C929.71,603.22,1033.27,483.3,1033.05,324.45z" />
+        </symbol>
+        <symbol
+                id="icon-chevron-down"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <path d="m6 9 6 6 6-6" />
+            </symbol>
+            <symbol id="icon-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+            <symbol id="icon-tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+<symbol id="icon-link0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link2-icon lucide-link-2"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 1 1 0 10h-2"/><line x1="8" x2="16" y1="12" y2="12"/></symbol>
+    </svg>
+
+    <section id="hero-section">
+        <div class="hero__wrapper" src="assets/merlok.webm" autoplay muted playsinline loop>
+            <div class="hero__overlay"></div>
+            <img class="hero__logo" src="assets/logo.webp" alt="Nexo Knights Logo | Knighton Media"
+                fetchpriority="high" />
+        </div>
+        <div class="hero__content">
+            <h1 class="hero__title">Knighton Media</h1>
+            <h2 class="hero__description">All Nexo Knights episodes in High quality with different Languages!</h2>
+            <h4 class="hero__description" id="heroCountdown"></h4>            
+            <button class="primary-button" onclick="shareWithOthers()">
+                <svg class="svg-icon highlight--blue"><use href="#icon-link"></use></svg>Share
+            </button>   
+        </div>
+    </section>
+
+
+    <main class="global-margin">
+        <div class="dropdown-wrapper">
+            <button id="extrasDropdownButton" class="dropdown-button">Trailers<svg class="svg-icon highlight--blue"><use href="#icon-chevron-down"></use></svg></button>
+            <select id="extrasDropdownMenu" class="dropdown-menu">
+                <option value="trailers">Trailers</option>
+                <option value="minisodes">Minisodes</option>
+                <option value="webisodes">Webisodes</option>
+                <option value="minimovies">Minimovies</option>
+            </select>
+        </div>
+        <div class="extras__container"></div>
+        <div class="line-divider"></div>
+
+        <div class="dropdown-wrapper">
+            <button id="seasonDropdownButton" class="dropdown-button">Season 1<svg class="svg-icon highlight--blue"><use href="#icon-chevron-down"></use></svg></button>
+            <select id="seasonDropdownMenu" class="dropdown-menu">
+                <option value="1">Season 1</option>
+                <option value="11">Season 2</option>
+                <option value="21">Season 3</option>
+                <option value="31">Season 4</option>
+            </select>
+        </div>
+        <div class="episode__container"></div>
+        <div class="line-divider"></div>
+
+        <div class="text-header">Notifications</div>
+        <div class="about__carousel-container" id="report-log">
+            <div class="about__description-box">
+                <div class="about__title">Notifications</div>
+                <div id="notifText">Season 2 and Minimovies in: <span class="highlight--blue" id="notifCountdown">0d 0h 0m 0s</span></div>
+            </div>
+        </div>
+        
+        <div class="text-header">About</div>
+        <div class="about__carousel-container">
+            <div class="about__description-box">
+                <div class="about__title">About Knighton Media</div>
+                <div>
+                    Knighton Media is Nexo Knights website, containing Episodes in High Quality with Multi-Language
+                    support! Founded
+                    by <span class="highlight--blue">@PandaMine5 </span>
+                </div>
+            </div>
+        </div>       
+        
+        <div class="text-header">Report</div>
+        <div class="about__carousel-container" id="report-log">
+            <div class="about__description-box">
+                <div class="about__title">Report Log</div>
+                <div>If Knighton Media glitches or Video/Audio</span> not working, copy & send us the report below. <a class="highlight--blue" href="legal.html#contact">Contact</a></div>
+ 
+<div class="about__log-wrapper"> 
+  <button class="about__log-copy-button" id="copyButton"><svg class="svg-icon"><use href="#icon-copy"></use></svg></button>
+  <div class="about__log" id="reportLog"></div>
+</div>
+  
+                <div>Which information is included: <a class="highlight--blue" href="legal.html">Read More</a></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer__info global-margin">
+        <div class="line-divider"></div>
+        <div class="footer__links">
+            <a class="footer__icon"
+                onclick="navigator.clipboard.writeText('pandamine5x'); alert('Copied Username: pandamine5x');"><svg
+                    class="svg-icon">
+                    <use href="#icon-discord"></use>
+                </svg></a>
+            <a class="footer__icon" href="https://github.com/pandamine5" target="_blank"><svg class="svg-icon">
+                    <use href="#icon-github"></use>
+                </svg></a>
+            <a class="footer__icon" href="https://www.curseforge.com/members/pandamine5/projects" target="_blank"><svg
+                    class="svg-icon">
+                    <use href="#icon-curseforge"></use>
+                </svg></a>
+        </div>
+        <div class="footer__links">
+            <a class="footer__text" href="legal.html#">Terms & Legal</a>
+            <a class="footer__text" href="legal.html#contact">Contact</a>
+        </div>
+        <div class="footer__text">© 2025-2026 Knighton Media. By PandaMine5</div>
+    </footer>
+    
+
+    <script src="js/episodeBuilder.js" type="module" defer></script>
+    <script src="js/characterBuilder.js" type="module" defer></script>
+   <script>
+    const pageData = {
+      title: document.title,
+      text: "Watch all 50+ Nexo Knights episodes in English, Ukrainian, German, Romanian at Knighton Media!",
+      url: window.location.href
+    };
+
+    async function shareWithOthers() {
+      if (navigator.share && navigator.canShare?.(pageData)) {
+        try {
+          await navigator.share(pageData);
+        } catch (err) {
+          if (err.name !== 'AbortError') {
+            console.error(err);
+          }
+        }
+      } else {
+        try {
+          await navigator.clipboard.writeText(window.location.href);
+        } catch (err) {
+          console.error(err);
+        }
+      }
+    }
+
+  const targetDate = new Date("2026-03-03T00:00:00+00:00").getTime();
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    let distance = targetDate - now;
+
+    const days    = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours   = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    if (distance < 0) {
+      document.getElementById("notifText").textContent = "Season 2 episodes & Minimovies are OUT!";
+      return;
+    }
+    
+    document.getElementById("notifCountdown").textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  }
+
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+  
+  
+
+    if (window.self !== window.top) {
+      window.stop();
+      document.documentElement.innerHTML = `<div>Not Found (Error: Fake Website)<div><br /><div>Current URL: ${window.self.location}</div><br /><div>Knighton Media URL: pandamine5.github.io/knighton-media</div><br /><div>Contact PandaMine5 by discord: pandamine5x</div>`;      
+    }
+
+function threeAmFilter() {
+  const now = new Date();
+  const hours = now.getHours();
+
+  if (hours >= 2 && hours <= 4) {
+    document.documentElement.setAttribute("dir", "rtl");
+  } else {
+    document.documentElement.setAttribute("dir", "ltr");
+  }
+}
+
+threeAmFilter();
+setInterval(threeAmFilter, 60000);
+
+</script>
+
+    <script type="module">
+        import { extrasData, episodeData } from "./js/episodeList.js";
+
+        const extrasMap = [
+            { type: "trailer", start: 1, end: 12, name: "Trailers", attr: "data-trailer" },
+            { type: "minisode", start: 1, end: 2, name: "Minisodes", attr: "data-minisode" },
+            { type: "webisode", start: 1, end: 8, name: "Webisodes", attr: "data-webisode" },
+            { type: "minimovie", start: 1, end: 14, name: "Minimovies", attr: "data-minimovie" },
+        ];
+
+        const seasonMap = [
+            { start: 1, end: 10, name: "Season 1" },
+            { start: 11, end: 20, name: "Season 2" },
+            { start: 21, end: 30, name: "Season 3" },
+            { start: 31, end: 40, name: "Season 4" },
+        ];
+
+        const episodeContainer = document.querySelector(".episode__container");
+        const seasonButton = document.getElementById("seasonDropdownButton");
+        const seasonMenu = document.getElementById("seasonDropdownMenu");
+
+        const extrasContainer = document.querySelector(".extras__container");
+        const extrasButton = document.getElementById("extrasDropdownButton");
+        const extrasMenu = document.getElementById("extrasDropdownMenu");
+        const reportLog = document.getElementById("reportLog");
+        const copyButton = document.getElementById("copyButton");
+
+        let isRestoringEpisodes = true;
+        let isRestoringExtras = true;
+
+        const typeToMenuValue = {
+            "trailer": "trailers",
+            "minisode": "minisodes",
+            "webisode": "webisodes",
+            "minimovie": "minimovies"
+        };
+
+        extrasButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            extrasMenu.focus();
+            extrasMenu.click();
+        });
+
+        function updateExtrasText(name) {
+            extrasButton.childNodes[0].textContent = name;
+        }
+
+        function getExtraType(item) {
+            for (let extra of extrasMap) {
+                const val = parseInt(item.getAttribute(extra.attr));
+                if (!isNaN(val) && val >= extra.start && val <= extra.end) {
+                    return extra;
+                }
+            }
+            return null;
+        }
+
+        extrasMenu.addEventListener("change", () => {
+            const selectedValue = extrasMenu.value;
+            const menuValueToType = Object.fromEntries(Object.entries(typeToMenuValue).map(([k, v]) => [v, k]));
+            const extra = extrasMap.find(e => e.type === menuValueToType[selectedValue]);
+
+            if (extra) {
+                const firstItem = extrasContainer.querySelector(`[${extra.attr}]`);
+                if (firstItem) {
+                    firstItem.scrollIntoView({ behavior: "instant", block: "nearest", inline: "start" });
+                }
+                updateExtrasText(extra.name);
+            }
+        });
+
+        const extrasObserver = new IntersectionObserver(
+            (entries) => {
+                if (isRestoringExtras) return;
+
+                let best = null;
+                let bestRatio = 0;
+
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting && entry.intersectionRatio > bestRatio) {
+                        bestRatio = entry.intersectionRatio;
+                        best = entry.target;
+                    }
+                });
+
+                if (best) {
+                    const extra = getExtraType(best);
+                    if (extra) {
+                        const extraNumber = parseInt(best.getAttribute(extra.attr));
+
+                        extrasMenu.value = typeToMenuValue[extra.type];
+                        updateExtrasText(extra.name);
+                        localStorage.setItem("lastExtra", extraNumber);
+                        localStorage.setItem("lastExtraType", extra.type);
+                    }
+                }
+            },
+            {
+                root: extrasContainer,
+                threshold: [0.7, 0.9, 1.0],
+            }
+        );
+
+        const observeExtras = () =>
+            extrasContainer.querySelectorAll("[data-trailer], [data-minisode], [data-webisode], [data-minimovie]").forEach((item) => {
+                extrasObserver.observe(item);
+            });
+
+        observeExtras();
+        new MutationObserver(observeExtras).observe(extrasContainer, { childList: true, subtree: true });
+
+        seasonButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            seasonMenu.focus();
+            seasonMenu.click();
+        });
+
+        function updateSeasonText(seasonName) {
+            seasonButton.childNodes[0].textContent = seasonName;
+        }
+
+        function getSeason(ep) {
+            for (let s of seasonMap) {
+                if (ep >= s.start && ep <= s.end) return s.name;
+            }
+            return "Season 1";
+        }
+
+        seasonMenu.addEventListener("change", () => {
+            const startEp = seasonMenu.value;
+            const season = seasonMap.find((s) => s.start == startEp);
+            if (season) {
+                const epItem = document.querySelector(`.episode__item[data-episode="${startEp}"]`);
+                epItem?.scrollIntoView({ behavior: "instant", block: "nearest", inline: "start" });
+                updateSeasonText(season.name);
+            }
+        });
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                if (isRestoringEpisodes) return;
+
+                let best = null;
+                let bestRatio = 0;
+
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting && entry.intersectionRatio > bestRatio) {
+                        bestRatio = entry.intersectionRatio;
+                        best = entry.target;
+                    }
+                });
+
+                if (best) {
+                    const ep = parseInt(best.dataset.episode);
+                    if (!isNaN(ep)) {
+                        const seasonName = getSeason(ep);
+                        const season = seasonMap.find((s) => s.name === seasonName);
+                        if (season) seasonMenu.value = season.start;
+                        updateSeasonText(seasonName);
+                        localStorage.setItem("lastEpisode", ep);
+                    }
+                }
+            },
+            {
+                root: episodeContainer,
+                threshold: [0.7, 0.9, 1.0],
+            }
+        );
+
+        const observe = () => document.querySelectorAll(".episode__item[data-episode]").forEach((epItem) => observer.observe(epItem));
+
+        observe();
+        new MutationObserver(observe).observe(episodeContainer, { childList: true, subtree: true });
+
+        requestAnimationFrame(() => {
+            const lastEpNumber = localStorage.getItem("lastEpisode");
+            if (!lastEpNumber) {
+                isRestoringEpisodes = false;
+                return;
+            }
+
+            const target = episodeContainer.querySelector(`[data-episode="${lastEpNumber}"]`);
+            if (target) {
+                episodeContainer.scrollLeft = target.offsetLeft;
+
+                const ep = parseInt(lastEpNumber);
+                const seasonName = getSeason(ep);
+                const season = seasonMap.find((s) => s.name === seasonName);
+                if (season) seasonMenu.value = season.start;
+                updateSeasonText(seasonName);
+            }
+
+            setTimeout(() => {
+                isRestoringEpisodes = false;
+            }, 500);
+        });
+
+        requestAnimationFrame(() => {
+            const lastExtraNumber = localStorage.getItem("lastExtra");
+            const lastExtraType = localStorage.getItem("lastExtraType");
+
+            if (!lastExtraNumber || !lastExtraType) {
+                isRestoringExtras = false;
+                return;
+            }
+
+            const extra = extrasMap.find(e => e.type === lastExtraType);
+            if (extra) {
+                const target = extrasContainer.querySelector(`[${extra.attr}="${lastExtraNumber}"]`);
+
+                if (target) {
+                    extrasContainer.scrollLeft = target.offsetLeft;
+                    extrasMenu.value = typeToMenuValue[extra.type];
+                    updateExtrasText(extra.name);
+                }
+            }
+
+            setTimeout(() => {
+                isRestoringExtras = false;
+            }, 500);
+        });
+
+
+
+
+
+    function encodeText(input) {
+      const bytes = new TextEncoder().encode(input);
+      let text = "";
+      for (const b of bytes) {
+        text += String.fromCharCode(b);
+      }
+      const reversed = btoa(text).replace("==", "").split("").reverse().join("");
+      return btoa(reversed);
+    }
+
+    function decodeText(input) {
+      const unreversed = atob(input).split("").reverse().join("");
+      const padded = unreversed + "=".repeat((4 - unreversed.length % 4) % 4);
+      const bytes = Uint8Array.from(atob(padded), c => c.charCodeAt(0));
+      return new TextDecoder().decode(bytes);
+    }
+    
+async function checkCodecs() {
+  if (!("mediaCapabilities" in navigator)) return {};
+
+  const videoTests = {
+    H264: 'video/mp4; codecs="avc1.640028"',
+    HEVC: 'video/mp4; codecs="hvc1.1.6.L93.90"',
+    VP9: 'video/webm; codecs="vp09.00.10.08"',
+    AV1: 'video/mp4; codecs="av01.0.05M.08"'
+  }; 
+  const audioTests = {
+    AAC_LC: 'audio/mp4; codecs="mp4a.40.2"',
+    AAC_HE: 'audio/mp4; codecs="mp4a.40.29"',
+    AAC_HE3: 'audio/mp4; codecs="mp4a.40.42"',    
+    OPUS: 'audio/webm; codecs="opus"'
+  };
+  const results = {};
+
+  const videoPromises = Object.entries(videoTests).map(async ([name, type]) => {
+    const r = await navigator.mediaCapabilities.decodingInfo({
+      type: "file",
+      video: { contentType: type, width: 1920, height: 1080, bitrate: 2_300_000, framerate: 24 }
+    });
+    results[name] = { supported: r.supported, smooth: r.smooth, powerEfficient: r.powerEfficient };
+  });
+
+  const audioPromises = Object.entries(audioTests).map(async ([name, type]) => {
+    const r = await navigator.mediaCapabilities.decodingInfo({
+      type: "file",
+      audio: { contentType: type, channels: 2, bitrate: 128_000, samplerate: 44100 }
+    });
+    results[name] = { supported: r.supported, smooth: r.smooth, powerEfficient: r.powerEfficient };
+  });
+
+  await Promise.all([...videoPromises, ...audioPromises]);
+  return results;
+}
+
+
+window.writeCodecSupport = checkCodecs().then(c => {
+    let codecData = (
+      `H264: Supported: ${c.H264?.supported ?? "?"}, Smooth: ${c.H264?.smooth ?? "?"}, Hardware Decoding: ${c.H264?.powerEfficient ?? "?"} | ` +
+      `HEVC: Supported: ${c.HEVC?.supported ?? "?"}, Smooth: ${c.HEVC?.smooth ?? "?"}, Hardware Decoding: ${c.HEVC?.powerEfficient ?? "?"} | ` +
+      `VP9: Supported: ${c.VP9?.supported ?? "?"}, Smooth: ${c.VP9?.smooth ?? "?"}, Hardware Decoding: ${c.VP9?.powerEfficient ?? "?"} | ` +
+      `AV1: Supported: ${c.AV1?.supported ?? "?"}, Smooth: ${c.AV1?.smooth ?? "?"}, Hardware Decoding: ${c.AV1?.powerEfficient ?? "?"} | ` +
+      `AAC: Supported: ${c.AAC_LC?.supported ?? "?"}, Smooth: ${c.AAC_LC?.smooth ?? "?"}, Hardware Decoding: ${c.AAC_LC?.powerEfficient ?? "?"} | ` +
+      `AAC-HE: Supported: ${c.AAC_HE?.supported ?? "?"}, Smooth: ${c.AAC_HE?.smooth ?? "?"}, Hardware Decoding: ${c.AAC_HE?.powerEfficient ?? "?"} | ` +
+      `AAC-HE3: Supported: ${c.AAC_HE3?.supported ?? "?"}, Smooth: ${c.AAC_HE3?.smooth ?? "?"}, Hardware Decoding: ${c.AAC_HE3?.powerEfficient ?? "?"} | ` +
+      `OPUS: Supported: ${c.OPUS?.supported ?? "?"}, Smooth: ${c.OPUS?.smooth ?? "?"}, Hardware Decoding: ${c.OPUS?.powerEfficient ?? "?"}`
+    );
+
+    return codecData;
+  })
+
+
+        if (!localStorage.getItem("userID")) {
+            localStorage.setItem("userID", crypto.randomUUID());
+        }
+        
+        const gl = document.createElement("canvas").getContext("webgl");
+        const debugInfo = gl.getExtension("WEBGL_debug_renderer_info");
+        const gpuName = debugInfo ? gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) : "unknown";
+        const requestServer = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+        let userData = JSON.stringify({
+            report_id: localStorage.getItem("userID"),
+            display:
+                `Screen pixels: ${Math.round(screen.width * window.devicePixelRatio)}x${Math.round(screen.height * window.devicePixelRatio)} (${screen.colorDepth} bit) (${window.devicePixelRatio}px Ratio) | ` +
+                `CSS pixels: ${screen.width}x${screen.height} | ` +
+                `Viewport pixels: ${window.innerWidth}x${window.innerHeight} | ` +
+                `Orientation: ${screen.orientation?.type} | ` +
+                `Fullscreen: ${document.fullscreenEnabled} | ` +
+                `Touch Screen: ${"ontouchstart" in window}`,
+
+            device_characteristics:
+                `Browser: ${navigator.userAgent},${navigator.languages} | ` +
+                `Dark UI: ${window.matchMedia("(prefers-color-scheme: dark)").matches} | ` +
+                `RAM: ${navigator?.deviceMemory ?? "?"} GB | ` +
+                `GPU: ${gpuName}`,
+
+            server_characteristics:
+                `Report Time: ${new Date()} | Video Serving Server: ${requestServer} | Referrer: ${document.referrer ?? "?"} | ` +
+                `Connection: ${navigator.connection?.effectiveType ?? "?"} | ` +
+                `Video Load Speed: ${(navigator.connection?.downlink / 8).toFixed(2) ?? "?"} MB | ` +
+                `RTT: ${navigator.connection?.rtt ?? "?"} Ms | ` +
+                `Local Storage Allowed: ${navigator.cookieEnabled}`,
+                
+            codecs: await writeCodecSupport,
+            source: `© 2025-2026 Knighton Media. By PandaMine5. Page: ${document.location.href}. UUID: ${crypto.randomUUID()}`
+        });
+    
+    
+copyButton.addEventListener("click", () => {
+    navigator.clipboard.writeText(`Generated Report: ${userData} \n\nKeep: ${encodeText(userData)}`);
+
+    const useElement = copyButton.querySelector("use");
+
+    useElement?.setAttribute("href", "#icon-tick");
+    setTimeout(() => useElement?.setAttribute("href", "#icon-copy"), 2000);
+});
+        
+        reportLog.textContent = userData;
+    </script>
+</body>
+
+</html>
