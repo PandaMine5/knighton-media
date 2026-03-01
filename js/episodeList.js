@@ -730,7 +730,7 @@ export const episodeData = [
         "video_data": ["720p", "default", "English"],
         "capture_time": "21:15",
         "link": "episode.html?episode=19",
-        //"m3u8_link": "episodes/e19/e19__main.m3u8"
+        "m3u8_link": "episodes/e19/e19__main.m3u8"
     },
     {
         "type": "episode",
