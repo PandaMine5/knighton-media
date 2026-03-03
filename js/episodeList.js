@@ -287,7 +287,7 @@ export const extrasData = [
         capture_time: "2:06",
         link: "episode.html?webisode=8",
         mp4_link: "W08 - Brave and Bold (and Short) Sir Robin.mp4"
-    },/*
+    },
 
     // minimovies
     {
@@ -471,7 +471,7 @@ export const extrasData = [
         capture_time: "1:24",
         link: "episode.html?minimovie=14",
         mp4_link: "MV14 - Always Prepared.mp4"
-    }*/
+    }
 ];
 
 export const episodeData = [
