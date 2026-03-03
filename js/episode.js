@@ -1,4 +1,4 @@
-import { extrasData, episodeData } from "./episodeList.js";
+9import { extrasData, episodeData } from "./episodeList.js";
 import { getMetadataKey } from "./misc.js";
 
 const capitalizeFirstLetter = str => {
@@ -116,12 +116,12 @@ document.body.insertAdjacentHTML("beforeend", `
 		{
 		  "@context": "https://schema.org",
 		  "@type": "VideoObject",
-		  "name": "${capitalizeFirstLetter(activeType.name)} ${ep.number} - \"${ep.title}\" | Knighton Media",
-		  "description": "Watch Nexo Knights: ${capitalizeFirstLetter(activeType.name)} ${ep.number} - \"${ep.title}\" on Knighton Media.",
+		  "name": "${capitalizeFirstLetter(activeType.name)} ${ep.number} - \\"${ep.title}\\" | Knighton Media",
+		  "description": "Watch Nexo Knights: ${capitalizeFirstLetter(activeType.name)} ${ep.number} - \\"${ep.title}\\" on Knighton Media.",
 		  "thumbnailUrl": ["https://pandamine5.github.io/knighton-media/assets/episode-images/${ep.thumbnail}"],
 		  "uploadDate": "2026-03-01T00:00:00+00:00",
 		  "duration": "${getMetadataKey(ep.scheme_metadata, "duration")}",
-		  "contentUrl": "https://archive.org/download/knighton-media-nk/${getMetadataKey(ep.scheme_metadata, "download")}",
+		  "contentUrl": "https://archive.org/download/knighton-media-nk/${getMetadataKey(ep.scheme_metadata, 'download')}",
 		  "embedUrl": "https://pandamine5.github.io/knighton-media/episode.html?${activeType.name}=${rawIndex}",
 		  "publisher": {
 		    "@type": "Person",
