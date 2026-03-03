@@ -1,4 +1,4 @@
-9import { extrasData, episodeData } from "./episodeList.js";
+import { extrasData, episodeData } from "./episodeList.js";
 import { getMetadataKey } from "./misc.js";
 
 const capitalizeFirstLetter = str => {
