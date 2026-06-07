@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://pandamine5.github.io/knighton-media/sitemap.xml
