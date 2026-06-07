@@ -925,7 +925,7 @@
                         if (data.success && hls.subtitleTrack !== -1) {
                             const track = hls.subtitleTracks[hls.subtitleTrack];
                             if (!track) return;
-                            // Gather cues from hls.js internal subtitle track
+                            
                             const textTrack = Array.from(video.textTracks).find(t => t.label === track.name || t.language === track.lang);
                             if (textTrack) {
                                 activeCues = Array.from(textTrack.cues || []).map(c => ({
