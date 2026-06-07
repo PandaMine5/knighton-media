@@ -62,6 +62,9 @@ fetch("https://archive.org/download/knighton-media-nk/W02%20-%20Jestro%20the%20B
 });*/
 
 
+const downloadFile = ep.scheme_metadata && ep.mp4_link && !ep.m3u8_link
+        ? ep.mp4_link
+        : getMetadataKey(ep.scheme_metadata, "download");
 
 document.title = `${activeType.letter}${ep.number} - \"${ep.title}\" | Knighton Media`;
 document.body.insertAdjacentHTML(
@@ -77,7 +80,7 @@ document.body.insertAdjacentHTML(
 			<div class="main-episode__button-wrapper">
 			    <button id="playButton" class="primary-button"><svg class="svg-icon"><use href="#icon-play"></use></svg>Play</button>
 			    <a id="downloadButton" class="primary-button round ${getMetadataKey(ep.scheme_metadata, "download") ?? "hidden"}" 
-			       href="${encodeURI(`https://archive.org/download/knighton-media-nk/${getMetadataKey(ep.scheme_metadata, "download") || ""}?token=${btoa(crypto.randomUUID())} `)}"
+			       href="${encodeURI(`https://archive.org/download/knighton-media-nk/${downloadFile}?token=${btoa(crypto.randomUUID())} `)}"
 			       target="_blank" 
 			       rel="noreferrer"><svg class="svg-icon"><use href="#icon-download"></use></svg>                 
 			    </a>
