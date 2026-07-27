@@ -17,6 +17,10 @@
 > ✔ 40+ Episodes
 >
 > ✔ English, Ukrainian, German, Romanian, Polish dubs and Spanish subtitles
+> 
+> 
+> <img src="assets/episode-images/mn01.avif" alt="Knighton Media banner" width="700" height="auto" />
+> <img src="https://ia600603.us.archive.org/14/items/knighton-media-nk/1.jpg" alt="Knighton Media banner" width="700" height="auto" />
 >
 > ---
 >
