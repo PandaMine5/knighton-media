@@ -181,33 +181,48 @@ export const extrasData = [
         link: "episode.html?trailer=14",
         mp4_link: "T14 - 4D Film.mp4"
     },
-
+    {
+        type: "trailer",
+        number: 15,
+        title: "Season 5 - Trailer",
+        thumbnail: "t15.avif",
+        description: "Merlok gets corrupted by Monstrox virus, will the knights save the kingdom before it gets dark?",
+        metadata: "1m · Sep 4, 2018",
+        scheme_metadata: "download=",
+        video_data: ["720p", "English", "None"],
+        timecode: "0:06",
+        link: "episode.html?trailer=15",
+        mp4_link: "T15 - Season 5.mp4"
+    },    
     // Minisodes
     {
         type: "minisode",
         number: 1,
         title: "Knights of the Realm, Pt. 1",
-        thumbnail: "soon.avif",
+        thumbnail: "mn01.avif",
         description: "Jestro's invasion threatens Glockenspiel, forcing the Nexo Knights to fight without Nexo powers, as the Clay's memory sends him back to the Knights' pasts—Macy's royal struggles, Aaron's endless pranks, Lance's lazy routines, Axl's dinner arguments, and Clay's rise from the Hood.",
         metadata: "22m · Feb 26, 2015",
+        scheme_metadata: "download=",
         rating: "8.3",
-        video_data: ["480p", "English", "English"],
+        video_data: ["1080p", "Polish", "None"],
         timecode: "10:53",
-        link: "episode.html?minisode=1"
+        link: "episode.html?minisode=1",
+        mp4_link: "MN01 - Knights of the Realm, Pt. 1.mp4"
     },
     {
         type: "minisode",
         number: 2,
         title: "Knights of the Realm, Pt. 2",
-        thumbnail: "soon.avif",
+        thumbnail: "mn02.avif",
         description: "As Ava tries to develop a new Nexo Power, the Knights remember their academy days, where they all meet together, Clay's intense training and Lance's lack of acceptance, Jestro's glow-up from rejected student to Royal Jester.",
         metadata: "22m · Feb 28, 2015",
-        rating: "8.1",
-        video_data: ["480p", "English", "English"],
-        timecode: "3:05",
-        link: "episode.html?minisode=2"
+        scheme_metadata: "download=",
+        rating: "8.5",
+        video_data: ["1080p", "Polish", "None"],
+        timecode: "20:29",
+        link: "episode.html?minisode=2",
+        mp4_link: "MN02 - Knights of the Realm, Pt. 2.mp4"
     },
-    
     // Webisodes
     {
         type: "webisode",
@@ -508,6 +523,19 @@ export const extrasData = [
         timecode: "0:54",
         link: "episode.html?minimovie=15",
         mp4_link: "MV15 - Attack and Rescue.mp4"
+    },
+    {
+        type: "minimovie",
+        number: 16,
+        title: "Calling all Knights",
+        thumbnail: "mv16.avif",
+        description: "Jestro and the stone-monsters have taken over the news-studio just to tell everyone that he and Monstrox will be taking over the kingdom of Knighton. Ava and Aaron are stunned. Now they know that our heroes really need help - your help!",
+        metadata: "1m · Jan 12, 2017",
+        scheme_metadata: "download=",
+        video_data: ["720p", "English", "None"],
+        timecode: "0:12",
+        link: "episode.html?minimovie=16",
+        mp4_link: "MV16 - Calling all Knights.mp4"
     },    
     // Rookie Missions
     {
@@ -1090,7 +1118,7 @@ export const episodeData = [
         description: "Clay Moorington had enough of Monstrox, Jestro and their Forbidden Powers and decides to take the fight to them. But the Cloud of Monstrox is getting closer and closer to unleash his master plan.",
         metadata: "22m · Aug 29, 2017",
         scheme_metadata: "download=E37 - Heart of Stone.mp4",
-        rating: "8.8",
+        rating: "8.9",
         video_data: ["default", "non-default", "default"],
         timecode: "4:19",
         link: "episode.html?episode=37",

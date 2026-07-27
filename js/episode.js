@@ -50,18 +50,6 @@ function getAirdate() {
 	return Math.trunc((today.setHours(0, 0, 0, 0) - airdate) / (1000 * 60 * 60 * 24));
 }
 
-/*
-fetch("https://archive.org/download/knighton-media-nk/W02%20-%20Jestro%20the%20Bad%E2%80%A6%20the%20Really%2C%20Really%20Bad.mp4", { 
- 	method: "HEAD"
-})
-.then(res => {
- 	const sizeBytes = res.headers.get("Content-Length");
- 	const sizeMB = (Number(sizeBytes) / (1024 * 1024)).toFixed(2);
-
- 	console.log(`${sizeMB} MB`);
-});*/
-
-
 const downloadFile = ep.scheme_metadata && ep.mp4_link && !ep.m3u8_link
         ? ep.mp4_link
         : getMetadataKey(ep.scheme_metadata, "download");
@@ -115,8 +103,6 @@ document.body.insertAdjacentHTML(
                                              ep.video_data[1] === "non-default" ? "English, Ukrainian, German, Polish" : ep.video_data[1]}</div>
             <div class="info__title">Subtitles (SDH)</div>
             <div class="info__description">${ep.video_data[2] === "default" ? "English, Ukrainian, German, Romanian, Polish" : ep.video_data[2]}</div>
-            <div class="info__title">Video Filters</div>
-            <div class="info__description">Default, Desaturated, Vibrant, Filmic, HDR</div>
             <div class="info__title">Timecode</div>
             <div class="info__description">${ep.timecode}</div>
             <div class="info__title">Air date</div>
