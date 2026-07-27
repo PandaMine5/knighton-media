@@ -192,10 +192,10 @@
             </div>
             <div class="line-divider"></div>
             <div class="text-header">Notifications</div>
-            <div class="about__carousel-container" id="report-log">
+            <div class="about__carousel-container">
                 <div class="about__description-box">
                     <div class="about__title">Notifications</div>
-                    <div id="notifText"><span class="highlight--blue" id="notifCountdown"></span></div>
+                    <div id="notifText">Download All episodes on: <a class="highlight--blue" href="https://archive.org/details/knighton-media-nk">Internet Archive</a></div>
                 </div>
             </div>
             <div class="text-header">Characters</div>
@@ -208,9 +208,6 @@
                     <svg class="svg-icon" style="transform: scaleX(-1);"><use href="#icon-chevron-left-long"></use></svg>
                 </button>
             </div>
-            <!-- 
-            <div class="text-header">Ads</div>        
-            <img class="ad-banner" src="https://is1-ssl.mzstatic.com/image/thumb/Features/v4/68/f2/f2/68f2f268-f9c3-3094-d72d-fbca018a4a34/3c8a9e43-c588-4d1d-b63d-6bae195f07a5.png/800x1026Sports.TVAESNR1.webp"> -->
             <div class="line-divider"></div>
             <div class="text-header">About</div>
             <div class="about__carousel-container">
@@ -252,16 +249,7 @@
         </footer>
         <script src="js/misc.js" type="module" defer></script>
         <script src="js/episodeBuilder.js" type="module" defer></script>
-<!--        <script src="js/characterBuilder.js" type="module" defer></script>
--->        <script>
-
-            // (async () => {
-            //     const url = "https://proxy.corsfix.com/?";
-            //     const res = await fetch(url, { method: "HEAD" });
-
-            //     console.log(res.headers.get("content-length"));
-            // })();
-
+        <script>
             const shareButton = document.getElementById("shareButton");
             const pageData = {
                 title: document.title,
@@ -299,10 +287,10 @@
             import { getID, encodeText, generateReport } from "./js/misc.js";
     
             const extrasMap = [
-                { type: "trailer", start: 1, end: 14, name: "Trailers", attr: "data-trailer" },
+                { type: "trailer", start: 1, end: 15, name: "Trailers", attr: "data-trailer" },
                 { type: "minisode", start: 1, end: 2, name: "Minisodes", attr: "data-minisode" },
                 { type: "webisode", start: 1, end: 8, name: "Webisodes", attr: "data-webisode" },
-                { type: "minimovie", start: 1, end: 15, name: "Minimovies", attr: "data-minimovie" },
+                { type: "minimovie", start: 1, end: 16, name: "Minimovies", attr: "data-minimovie" },
                 { type: "rookie_mission", start: 1, end: 5, name: "Rookie Missions", attr: "data-rookie_mission" },
             ];
 
@@ -521,7 +509,7 @@
                 }, 500);
             });
 
-            function updateCountdown() {
+   /*         function updateCountdown() {
                 const now = new Date().getTime();
                 const targetDate = new Date("2026-05-11T00:00:00+00:00").getTime();
             
@@ -540,7 +528,7 @@
                 document.getElementById("notifCountdown").textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
             }
             setInterval(updateCountdown, 1_000);
-            updateCountdown();
+            updateCountdown();*/
         
         
             // Report Log
