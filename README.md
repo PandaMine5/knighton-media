@@ -7,7 +7,7 @@
 > <img src="og_image.jpg" alt="Knighton Media banner" width="700" height="auto" />
 > <div align="center">
 >    <h6><code>Made by PandaMine5</code></h6>
->    <h6><code>Latest update May 29, 2026</code></h6>
+>    <h6><code>Latest update Jul 27, 2026</code></h6>
 > </div>
 >
 > A Nexo Knights website to watch all **Episodes and Lost media** in high quality
@@ -16,7 +16,7 @@
 >
 > ✔ 40+ Episodes
 >
-> ✔ English, Ukrainian, German, Romanian, Polish dubs and subtitles
+> ✔ English, Ukrainian, German, Romanian, Polish dubs and Spanish subtitles
 >
 > ---
 >
