@@ -26,6 +26,20 @@
 
 #
 
+> [!TIP]
+>
+> ## **Try PandaMine's 3D Skin Layer for MCBE**
+>
+> <img src="https://media.forgecdn.net/attachments/1802/65/thumbnail-png.png" alt="Knighton Media banner" width="700" height="auto" />
+>
+> 
+> ### 🔗 **Link**
+>
+> **https://www.curseforge.com/minecraft-bedrock/texture-packs/pandamines-3d-skin-layer**
+>
+
+#
+
 > [!CAUTION]
 >
 > ### ⚠️ **Important Information**
