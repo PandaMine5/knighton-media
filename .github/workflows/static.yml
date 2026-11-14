@@ -1,8 +1,6 @@
 name: Minify and deploy to build
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -29,7 +27,11 @@ jobs:
       - name: Minify
         run: |
           find dist -name '*.html' -print0 | while IFS= read -r -d '' f; do
-            html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true -o "$f" "$f"
+            html-minifier-terser --collapse-whitespace --remove-comments \
+          --minify-css true \
+          --minify-js '{"module":true}' \
+          --process-scripts application/ld+json \
+          -o "$f" "$f"
           done
           find dist -name '*.css' ! -name '*.min.css' -print0 | while IFS= read -r -d '' f; do
             lightningcss --minify "$f" -o "$f"
