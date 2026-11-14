@@ -4,8 +4,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="referrer" content="no-referrer-when-downgrade">
-        <meta http-equiv="X-Frame-Options" content="DENY">
-        <meta http-equiv="X-Content-Type-Options" content="nosniff">
         <meta name="google-site-verification" content="6mRE_b6i92f3FgS8IBhteZqqvbl2BQEi-8CCs8tVLuc">
         <title>Knighton Media - Watch Nexo Knights online</title>
         <meta name="description" content="Watch all 50+ Nexo Knights episodes in English, Ukrainian, German, Romanian and Polish on Knighton Media!">
@@ -38,6 +36,12 @@
         <link rel="prefetch" href="js/episodeBuilder.js">
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/index.css">
+        <style>
+            .skip-link{position:absolute;left:8px;top:-48px;z-index:100;padding:8px 14px;background:#fff;color:#000;border-radius:8px}
+            .skip-link:focus{top:8px}
+            :focus-visible{outline:3px solid #0a84ff!important;outline-offset:2px}
+            @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+        </style>
         <script type="application/ld+json">
             {
                 "@context": "https://schema.org",
@@ -93,6 +97,7 @@
         </script>
     </head>
     <body>
+        <a class="skip-link" href="#main">Skip to content</a>
         <svg xmlns="http://www.w3.org/2000/svg" style="display: none" aria-hidden="true">
             <symbol id="icon-discord" viewBox="0 0 24 24" fill="currentColor">
                 <path
@@ -145,14 +150,14 @@
             <div class="hero__content">
                 <h1 class="hero__title">Knighton Media</h1>
                 <h2 class="hero__description">All Nexo Knights episodes in High quality with different Languages!</h2>
-                <button class="primary-button" id="shareButton"><svg class="svg-icon highlight--blue"><use href="#icon-link"></use></svg>Share</button>
+                <button class="primary-button" id="shareButton"><svg aria-hidden="true" focusable="false" class="svg-icon highlight--blue"><use href="#icon-link"></use></svg>Share</button>
             </div>
         </section>
     
-        <main class="global-margin">
+        <main id="main" class="global-margin">
             <div class="dropdown-wrapper">
-                <button id="extrasDropdownButton" class="dropdown-button">Trailers<svg class="svg-icon highlight--blue"><use href="#icon-chevron-down"></use></svg></button>
-                <select id="extrasDropdownMenu" class="dropdown-menu">
+                <button id="extrasDropdownButton" class="dropdown-button">Trailers<svg aria-hidden="true" focusable="false" class="svg-icon highlight--blue"><use href="#icon-chevron-down"></use></svg></button>
+                <select aria-label="Extras category" id="extrasDropdownMenu" class="dropdown-menu">
                     <option value="trailers">Trailers</option>
                     <option value="minisodes">Minisodes</option>
                     <option value="webisodes">Webisodes</option>
@@ -161,20 +166,20 @@
                 </select>
             </div>
             <div class="shelf__scroll-wrapper no-global-margin">
-                <button class="shelf__scroll-button left" data-target=".extras__container">
-                    <svg class="svg-icon"><use href="#icon-chevron-left-long"></use></svg>
+                <button aria-label="Scroll left" class="shelf__scroll-button left" data-target=".extras__container">
+                    <svg aria-hidden="true" focusable="false" class="svg-icon"><use href="#icon-chevron-left-long"></use></svg>
                 </button>
-                <div class="extras__container"></div>
-                <button class="shelf__scroll-button right" data-target=".extras__container">
-                    <svg class="svg-icon" style="transform: scaleX(-1);"><use href="#icon-chevron-left-long"></use></svg>
+                <div class="extras__container" role="region" aria-label="Extras" tabindex="0"></div>
+                <button aria-label="Scroll right" class="shelf__scroll-button right" data-target=".extras__container">
+                    <svg aria-hidden="true" focusable="false" class="svg-icon" style="transform: scaleX(-1);"><use href="#icon-chevron-left-long"></use></svg>
                 </button>
             </div>
             <div class="line-divider"></div>
             <div class="dropdown-wrapper">
-                <button id="seasonDropdownButton" class="dropdown-button">Season 1<svg class="svg-icon highlight--blue">
+                <button id="seasonDropdownButton" class="dropdown-button">Season 1<svg aria-hidden="true" focusable="false" class="svg-icon highlight--blue">
                         <use href="#icon-chevron-down"></use>
                     </svg></button>
-                <select id="seasonDropdownMenu" class="dropdown-menu">
+                <select aria-label="Season" id="seasonDropdownMenu" class="dropdown-menu">
                     <option value="1">Season 1</option>
                     <option value="11">Season 2</option>
                     <option value="21">Season 3</option>
@@ -182,34 +187,34 @@
                 </select>
             </div>
             <div class="shelf__scroll-wrapper no-global-margin">
-                <button class="shelf__scroll-button left" data-target=".episode__container">
-                    <svg class="svg-icon"><use href="#icon-chevron-left-long"></use></svg>
+                <button aria-label="Scroll left" class="shelf__scroll-button left" data-target=".episode__container">
+                    <svg aria-hidden="true" focusable="false" class="svg-icon"><use href="#icon-chevron-left-long"></use></svg>
                 </button>
-                <div class="episode__container"></div>
-                <button class="shelf__scroll-button right" data-target=".episode__container">
-                    <svg class="svg-icon" style="transform: scaleX(-1);"><use href="#icon-chevron-left-long"></use></svg>
+                <div class="episode__container" role="region" aria-label="Episodes" tabindex="0"></div>
+                <button aria-label="Scroll right" class="shelf__scroll-button right" data-target=".episode__container">
+                    <svg aria-hidden="true" focusable="false" class="svg-icon" style="transform: scaleX(-1);"><use href="#icon-chevron-left-long"></use></svg>
                 </button>
             </div>
             <div class="line-divider"></div>
-            <div class="text-header">Notifications</div>
+            <div class="text-header" role="heading" aria-level="2">Notifications</div>
             <div class="about__carousel-container">
                 <div class="about__description-box">
                     <div class="about__title">Notifications</div>
                     <div id="notifText">Download All episodes on: <a class="highlight--blue" href="https://archive.org/details/knighton-media-nk">Internet Archive</a></div>
                 </div>
             </div>
-            <div class="text-header">Characters</div>
+            <div class="text-header" role="heading" aria-level="2">Characters</div>
             <div class="shelf__scroll-wrapper no-global-margin">
-                <button class="shelf__scroll-button left" data-target=".character__container">
-                    <svg class="svg-icon"><use href="#icon-chevron-left-long"></use></svg>
+                <button aria-label="Scroll left" class="shelf__scroll-button left" data-target=".character__container">
+                    <svg aria-hidden="true" focusable="false" class="svg-icon"><use href="#icon-chevron-left-long"></use></svg>
                 </button>
-                <div class="character__container"></div>
-                <button class="shelf__scroll-button right" data-target=".character__container">
-                    <svg class="svg-icon" style="transform: scaleX(-1);"><use href="#icon-chevron-left-long"></use></svg>
+                <div class="character__container" role="region" aria-label="Characters" tabindex="0"></div>
+                <button aria-label="Scroll right" class="shelf__scroll-button right" data-target=".character__container">
+                    <svg aria-hidden="true" focusable="false" class="svg-icon" style="transform: scaleX(-1);"><use href="#icon-chevron-left-long"></use></svg>
                 </button>
             </div>
             <div class="line-divider"></div>
-            <div class="text-header">About</div>
+            <div class="text-header" role="heading" aria-level="2">About</div>
             <div class="about__carousel-container">
                 <div class="about__description-box">
                     <div class="about__title">About Knighton Media</div>
@@ -218,13 +223,13 @@
                     </div>
                 </div>
             </div>
-            <div class="text-header">Report</div>
+            <div class="text-header" role="heading" aria-level="2">Report</div>
             <div class="about__carousel-container" id="report-log">
                 <div class="about__description-box">
                     <div class="about__title">Report Log</div>
-                    <div>If Knighton Media glitches or Video/Audio</span> doesn't work, copy & send me the report below. <a class="highlight--blue" href="legal.html#contact">Contact</a></div>
+                    <div>If Knighton Media glitches or Video/Audio doesn't work, copy & send me the report below. <a class="highlight--blue" href="legal.html#contact">Contact</a></div>
                     <div class="about__log-wrapper" translate="no">
-                        <button class="about__log-copy-button" id="copyButton"><svg class="svg-icon highlight--blue">
+                        <button class="about__log-copy-button" id="copyButton" aria-label="Copy report"><svg aria-hidden="true" focusable="false" class="svg-icon highlight--blue">
                                 <use href="#icon-copy"></use>
                             </svg></button>
                         <div class="about__log" id="reportLog"></div>
@@ -237,9 +242,9 @@
         <footer class="footer__info global-margin">
             <div class="line-divider"></div>
             <div class="footer__links">
-                <a class="footer__icon" onclick="navigator.clipboard.writeText('pandamine5x'); alert('Copied Username: pandamine5x');"><svg class="svg-icon"><use href="#icon-discord"></use></svg></a>
-                <a class="footer__icon" href="https://github.com/pandamine5" target="_blank"><svg class="svg-icon"><use href="#icon-github"></use></svg></a>
-                <a class="footer__icon" href="https://www.curseforge.com/members/pandamine5/projects" target="_blank"><svg class="svg-icon"><use href="#icon-curseforge"></use></svg></a>
+                <a class="footer__icon" href="#" role="button" aria-label="Copy Discord username" onclick="navigator.clipboard.writeText('pandamine5x'); alert('Copied Username: pandamine5x'); return false;"><svg aria-hidden="true" focusable="false" class="svg-icon"><use href="#icon-discord"></use></svg></a>
+                <a class="footer__icon" href="https://github.com/pandamine5" target="_blank" rel="noopener" aria-label="GitHub (opens in new tab)"><svg aria-hidden="true" focusable="false" class="svg-icon"><use href="#icon-github"></use></svg></a>
+                <a class="footer__icon" href="https://www.curseforge.com/members/pandamine5/projects" target="_blank" rel="noopener" aria-label="CurseForge (opens in new tab)"><svg aria-hidden="true" focusable="false" class="svg-icon"><use href="#icon-curseforge"></use></svg></a>
             </div>
             <div class="footer__links">
                 <a class="footer__text" href="legal.html#">Terms & Legal</a>
@@ -550,7 +555,7 @@
                     const scrollSize = container.clientWidth;
                     const direction = btn.classList.contains("left") ? -1 : 1;
             
-                    container.scrollBy({ left: scrollSize * direction, behavior: "smooth" });
+                    container.scrollBy({ left: scrollSize * direction, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
                 });
             });
         </script>
