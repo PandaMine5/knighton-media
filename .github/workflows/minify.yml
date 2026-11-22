@@ -45,7 +45,7 @@ jobs:
             --sort-attributes \
             --sort-class-name \
             --use-short-doctype \
-            --minify-css '{"level":2}' \
+            --minify-css true \
             --minify-js '{"module":true,"compress":{"passes":3},"mangle":true,"format":{"comments":false}}'
 
       - name: Minify CSS
