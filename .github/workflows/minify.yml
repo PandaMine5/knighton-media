@@ -1,0 +1,70 @@
+name: Minify code
+on:
+  workflow_dispatch:
+  push:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-deploy
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 26
+
+      - name: Install minifiers
+        run: npm install -g html-minifier-terser lightningcss-cli terser svgo@3
+
+      - name: Copy site to dist
+        run: |
+          mkdir dist
+          rsync -a --exclude='.git' --exclude='.github' --exclude='dist' --exclude='node_modules' ./ dist/
+
+      - name: Minify HTML (inline CSS + JS)
+        run: |
+          html-minifier-terser \
+            --input-dir dist --output-dir dist --file-ext html \
+            --case-sensitive \
+            --keep-closing-slash \
+            --collapse-whitespace \
+            --collapse-boolean-attributes \
+            --decode-entities \
+            --remove-comments \
+            --remove-empty-attributes \
+            --remove-redundant-attributes \
+            --remove-script-type-attributes \
+            --remove-style-link-type-attributes \
+            --sort-attributes \
+            --sort-class-name \
+            --use-short-doctype \
+            --minify-css '{"level":2}' \
+            --minify-js '{"module":true,"compress":{"passes":3},"mangle":true,"format":{"comments":false}}'
+
+      - name: Minify CSS
+        run: |
+          find dist -name '*.css' ! -name '*.min.css' -print0 \
+            | xargs -0 -n1 -P"$(nproc)" sh -c 'lightningcss --minify "$0" -o "$0"'
+
+      - name: Minify JS
+        run: |
+          find dist \( -name '*.js' -o -name '*.mjs' \) ! -name '*.min.js' -print0 \
+            | xargs -0 -n1 -P"$(nproc)" sh -c 'terser "$0" --module -c passes=3 -m --comments false -o "$0"'
+
+      - name: Minify SVG
+        run: svgo -f dist -r --multipass
+
+      - name: Deploy to build branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: build
+          publish_dir: ./dist
+          force_orphan: true
